@@ -23,11 +23,10 @@ public class blobdetection {
 	public static char[][] colours;
 
 
-	public static int ProcessImage(String filepath) throws Exception { 
-		String photo;
+	public int ProcessImage() throws Exception {
 		Scanner ob = new Scanner(System.in);
 		System.out.println("please enter the file name");
-		filepath=ob.next();
+		String filepath = ob.next();
 		File file = new File("photo.ff");
 		DataInputStream in = new DataInputStream(new FileInputStream(file));
 		char strongcolor;
@@ -110,7 +109,23 @@ public class blobdetection {
 
 		in.close();
 
-				
+
+		for (int y = 0; y < height; y++) {
+			for (int x = 0; x < width; x++) {
+
+				if (colours[x][y] == 'R') {
+
+					colours[x][y] = 'O';
+
+					runningx += x;
+					runningy += y;
+				}
+
+			}
+		}
+
+		// this doesn't work, see above
+		/*	
 		while(true){
 			if(x == width-1 && y == height-1) { 
 				break;
@@ -126,12 +141,14 @@ public class blobdetection {
 					if( y==height-1) { 
 						break;
 					} 
-					y++; x=0;
+					y++; 
+					x=0;
 				} else {
 					x++;
 				}
 			}
 		}
+		*/
 		return runningx & runningy;
 	} 
 	 	
