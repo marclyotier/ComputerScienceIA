@@ -1,5 +1,13 @@
 #!/bin/bash
 
+{
 git add *
-git commit -m '$1'
+} &> /dev/null
+
+echo "Enter a commit message"
+read message
+
+{
+git commit -m "$message"
+} &> /dev/null
 git push
