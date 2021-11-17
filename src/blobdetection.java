@@ -27,7 +27,7 @@ public class blobdetection {
 		Scanner ob = new Scanner(System.in);
 		System.out.println("please enter the file name");
 		String filepath = ob.next();
-		File file = new File("photo.ff");
+		File file = new File(filepath);
 		DataInputStream in = new DataInputStream(new FileInputStream(file));
 		char strongcolor;
 		int	largestvalue;
