@@ -38,8 +38,8 @@ public class blobdetection {
 		int B=0;
 		int xchord = 0;
 		int ychord = 0;
-		int xcount = 0;
-		int ycount = 0; 
+		int count = 0;
+		 
 		char[] header = new char[8];
 		
 		for (int i = 0; i < header.length; i++)
@@ -114,7 +114,7 @@ public class blobdetection {
 			for (int x = 0; x < width; x++) {
 
 				if (colours[x][y] == 'R') {
-
+count++;
 					colours[x][y] = 'O';
 
 					runningx += x;
@@ -149,6 +149,8 @@ public class blobdetection {
 			}
 		}
 		*/
+	runningx= 	runningx / count;
+runningy =		runningy / count;
 		return runningx & runningy;
 	} 
 	 	
