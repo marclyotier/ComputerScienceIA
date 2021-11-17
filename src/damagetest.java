@@ -1,3 +1,4 @@
+/*
 public static void main(string[] args) {
  class damagetest  {
 				 int dead;
@@ -53,3 +54,4 @@ totaldamage = damage;
                         }
                 }
 }
+*/
