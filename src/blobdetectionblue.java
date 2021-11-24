@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
 
-public class blobdetection {
+public class blobdetectionblue {
 	public static int count = 0;
-	public static int x = 0;
+	public static int x2 = 0;
 	public static int xup = 0;
 	public static int xdown = 0;
 	public static int xleft = 0;
@@ -17,13 +17,13 @@ public class blobdetection {
 
 	public static int width;
 	public static int height;
-	public static int y = 0;
-	public static int runningy = 0;
-	public static int runningx = 0;
+	public static int y2 = 0;
+	public static int runningy2 = 0;
+	public static int runningx2 = 0;
 	public static char[][] colours;
 
 
-	public int ProcessImage() throws Exception {
+	public void ProcessImageblue() throws Exception {
 		Scanner ob = new Scanner(System.in);
 		System.out.println("please enter the file name");
 		String filepath = ob.next();
@@ -105,44 +105,32 @@ public class blobdetection {
 				j++;
 				l=1;
 			}
-				for (int y = 0; y < height; y++) {
-			for (int x = 0; x < width; x++) {
-				
-				if (colours[x][y] == 'R') {
-					count++;
-					}
 		}
 
-		
-
-}	
-
+		in.close();
 }
-	in.close();
-return count;
-}
-public int detect() throws Exception {
+	public int detectblue() throws Exception {
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
 				
 				if (colours[x][y] == 'R') {
 					count++;
 					colours[x][y] = 'O';
-					runningx += x;
-					runningy += y;
-					y= height;
-					x= height;	
-				
+					runningx2 += x;
+					runningy2 += y;	
+					y = height;
+					x = width; 
+					
+				}
 				}
 
 			}
-			}
-			return x & y;
+					return x2 & y2 & count;
 		}
-		//	runningx = 	runningx / count;
-			//		runningy =	runningy / count;
+		//	runningx2 = 	runningx2 / count;
+		//			runningy2 =	runningy2 / count;
 				
-						
+					
 
 
 		// this doesn't work, see above
@@ -185,19 +173,19 @@ public int detect() throws Exception {
 		//		count++;
 
 			//}
-		if(colours [x][1+y] == 'R') {
-			colours[x][y+1] = 'O';
+		if(colours [x2][1+y2] == 'R') {
+			colours[x2][y2+1] = 'O';
 
-			runningx = runningx + x; 
-			runningy = runningy + y-1; 
+			runningx2 = runningx2 + x2; 
+			runningy2 = runningy2 + y2-1; 
 			count++;
 		}
 
-		if(colours [x+1][y] == 'R') {
-			colours[x+1][y] = 'O';
+		if(colours [x2+1][y2] == 'R') {
+			colours[x2+1][y2] = 'O';
 
-			runningx = runningx + x+1; 
-			runningy = runningy + y; 
+			runningx2 = runningx2 + x2+1; 
+			runningy2 = runningy2 + y2; 
 			count++;	
 		}
 	}
