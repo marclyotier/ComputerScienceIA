@@ -38,6 +38,7 @@ public class blobdetection {
 		int B=0;
 		int xchord = 0;
 		int ychord = 0;
+
 		 
 		char[] header = new char[8];
 		
@@ -104,45 +105,41 @@ public class blobdetection {
 				j++;
 				l=1;
 			}
-			
-			for (int y = 0; y < height; y++) {
-				for (int x = 0; x < width; x++) {
-
-					//System.out.println("(" + x + "," + y + ") = '" + colours[x][y] + "'");
-					
-					if (colours[x][y] == 'R') {
-						count++;
-						System.out.println("increase count to " + count);
-					}
-
-				}
-			}
-		}
-		in.close();
-
-		System.out.println("done detecting");
-		
-		return count;
-	}
-
-	public int detect() throws Exception {
-		for (int y = 0; y < height; y++) {
+				for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
 				
 				if (colours[x][y] == 'R') {
 					count++;
+					}
+		}
+
+		
+
+}	
+
+}
+return count;
+}
+public int[] detect() throws Exception {
+	System.out.println("test");
+		for (int y = 0; y < height; y++) {
+			for (int x = 0; x < width; x++) {
+				
+				if (colours[x][y] == 'R') {
+					
 					colours[x][y] = 'O';
 					runningx += x;
 					runningy += y;
 					y= height;
 					x= height;	
-				
+					
+					return new int[]{x, y};
 				}
 
 			}
 			}
-			return x & y;
-		}
+		return null;
+	}
 		//	runningx = 	runningx / count;
 			//		runningy =	runningy / count;
 				
