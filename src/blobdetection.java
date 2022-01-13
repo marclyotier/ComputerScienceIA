@@ -2,6 +2,7 @@ import java.lang.Math;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class blobdetection {
 	public static int count = 0;
@@ -105,37 +106,42 @@ public class blobdetection {
 				j++;
 				l=1;
 			}
-				for (int y = 0; y < height; y++) {
-			for (int x = 0; x < width; x++) {
+		
+
+}	
+	for (y = 0; y < height; y++) {
+			for (x = 0; x < width; x++) {
 				
 				if (colours[x][y] == 'R') {
 					count++;
 					}
 		}
-
-		
-
-}	
-
 }
 return count;
 }
 public int[] detect() throws Exception {
-	System.out.println("test");
-		for (int y = 0; y < height; y++) {
-			for (int x = 0; x < width; x++) {
-				
-				if (colours[x][y] == 'R') {
+	
+		for (int l  = 0; l < height; l++) {
+			for (int k = 0; k < width; k++) {
+			//	System.out.println(colours[l][k]);
+			//	TimeUnit.SECONDS.sleep(500);
+			//		System.out.println(colours[x][y]);
+				if (colours[l][k] == 'R') { 
+			//	TimeUnit.SECONDS.sleep(50);
+			System.out.println(colours[l][k]);
+					runningx += l;
+					runningy += k;
+                 
 					
-					colours[x][y] = 'O';
-					runningx += x;
-					runningy += y;
-					y= height;
-					x= height;	
 					
-					return new int[]{x, y};
+					return new int[]{l, k};
+					
 				}
+				
 
+					else {
+				//		System.out.println("empty cell");
+					}
 			}
 			}
 		return null;
@@ -170,7 +176,9 @@ public int[] detect() throws Exception {
 				}
 			}
 		}
+		
 		*/
+		
 
 	
 	 	
@@ -187,7 +195,7 @@ public int[] detect() throws Exception {
 
 			//}
 		if(colours [x][1+y] == 'R') {
-			colours[x][y+1] = 'O';
+			colours[x][y+1] = '1';
 
 			runningx = runningx + x; 
 			runningy = runningy + y-1; 
@@ -195,7 +203,7 @@ public int[] detect() throws Exception {
 		}
 
 		if(colours [x+1][y] == 'R') {
-			colours[x+1][y] = 'O';
+			colours[x+1][y] = '1';
 
 			runningx = runningx + x+1; 
 			runningy = runningy + y; 
