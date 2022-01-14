@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Main {
 
 	static Sort sorting = new Sort();
-static  int unit = -1;
+	static int unit = -1;
+	
 	public static void main(String[] args) throws Exception {
 		Scanner ob = new Scanner(System.in);
 		System.out.println("would you like to enable automatic data entery (y/n) ");
@@ -64,8 +65,8 @@ static  int unit = -1;
 			}
 		}
 
-		for(int i = 0; i < unit; i++) {
- int[unit][2] highscore;
+		for (int i = 0; i < unit; i++) {
+			int[][] highscore = new int[unit][2];
 		 
 			
 		}
