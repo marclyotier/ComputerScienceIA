@@ -53,7 +53,7 @@ public class Main {
 				System.out.println("would you like to enter a new point(y/n)");
 				entering = ob.next();
 				
-				if (entering == "y") {
+				if(entering.equals("y")) {
 					
 					unit++;
 					
@@ -62,7 +62,18 @@ public class Main {
 					System.out.println("enter the y location of the unit");
 					redblobs[unit][1] = Integer.parseInt(ob.next());
 				}
+				else if(entering.equals("n")) {
+				break;
+				}
+				else {
+System.out.println("invalid response please enter y or n ");
+				
+				}
+			
 			}
+				System.out.println("unit 1 is the first most improtant ");
+				System.out.println("unit 3 is the second most improtant ");
+				System.out.println("unit 2 is the third most improtant ");
 		}
 
 		for (int i = 0; i < unit; i++) {
