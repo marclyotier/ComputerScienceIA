@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
 	static Sort sorting = new Sort();
-
+static  int unit = -1;
 	public static void main(String[] args) throws Exception {
 		Scanner ob = new Scanner(System.in);
 		System.out.println("would you like to enable automatic data entery (y/n) ");
@@ -53,7 +53,7 @@ public class Main {
 				entering = ob.next();
 				
 				if (entering == "y") {
-					int unit = -1;
+					
 					unit++;
 					
 					System.out.println("enter the x location of the unit");
@@ -62,6 +62,12 @@ public class Main {
 					redblobs[unit][1] = Integer.parseInt(ob.next());
 				}
 			}
+		}
+
+		for(int i = 0; i < unit; i++) {
+ int[unit][2] highscore;
+		 
+			
 		}
 	}
 

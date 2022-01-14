@@ -35,8 +35,8 @@ public class Sort {
 		Math.abs(x-centerx);
 		Math.abs(y-centery);
 			
-		x= x*x;
-		y= y*y;
+		redblobs[0][flag]= redblobs[0][flag]*redblobs[0][flag];
+		redblobs[1][flag]= redblobs[1][flag]*redblobs[1][flag];
 
 		centerdistance = Math.sqrt(redblobs[1][flag] + redblobs[0][flag]);
 
