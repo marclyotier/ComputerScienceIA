@@ -4,6 +4,8 @@ public class Main {
 
 	static Sort sorting = new Sort();
 	static int unit = -1;
+	static int pointer;
+	static double highestscore = 0;
 	
 	public static void main(String[] args) throws Exception {
 		Scanner ob = new Scanner(System.in);
@@ -71,9 +73,7 @@ System.out.println("invalid response please enter y or n ");
 				}
 			
 			}
-				System.out.println("unit 1 is the first most improtant ");
-				System.out.println("unit 3 is the second most improtant ");
-				System.out.println("unit 2 is the third most improtant ");
+			
 		}
 
 		for (int i = 0; i < unit; i++) {
@@ -84,19 +84,38 @@ System.out.println("invalid response please enter y or n ");
 	}
 
 	
-	public int score(int[][] redblobs) throws Exception {
-		
-		int score = 0;
+	public static void score(int[][] redblobs) throws Exception {
+		Scanner ob = new Scanner(System.in);
+		double score = 0;
 		sorting.centerdist(redblobs, 0);
 		double distance = sorting.centerdist(redblobs, 0);
+		int j=0;
+		for(int i = 0; i<= unit; i++) {
 		
-		if(distance < 10) {
-			score = score +5;
-		}
-		else if (distance < 40) {
-			score = score +1;	
-		}
-
-		return score;
+		String entering;
+		score = score + 10/distance;
+			System.out.println("is this unit  a specalist y/n");
+				entering = ob.next();
+				
+				if(entering.equals("y")) {
+				score=score+ 15;
+				}
+			System.out.println("is this unit  a injured  y/n");
+				entering = ob.next();
+				if(entering.equals("y"))	{
+					score=score+ 15;
+				}
+				if(highestscore < score) { 
+				highestscore = score; 
+				pointer = i;
+				}
+				System.out.println("unit" + i + "has a score of" + score);
 	}
+	if(j==unit)
+	 {}
+	 else {
+Main.score();
+}	
 }
+}
+
