@@ -74,7 +74,7 @@ public class Main {
 			}
 			
 		}
-
+     score(redblobs);
 		for (int i = 0; i < unit; i++) {
 			int[][] highscore = new int[unit][2];
 		}
@@ -110,11 +110,6 @@ public class Main {
 			System.out.println("unit" + i + "has a score of" + score);
 		}
 
-		if(j==unit) {
-
-		} else {
-			score(redblobs);
-		}
 	}
 }
 
