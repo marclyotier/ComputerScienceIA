@@ -65,11 +65,10 @@ public class Main {
 					redblobs[unit][1] = Integer.parseInt(ob.next());
 				}
 				else if(entering.equals("n")) {
-				break;
+					break;
 				}
 				else {
-System.out.println("invalid response please enter y or n ");
-				
+					System.out.println("invalid response please enter y or n ");
 				}
 			
 			}
@@ -78,8 +77,6 @@ System.out.println("invalid response please enter y or n ");
 
 		for (int i = 0; i < unit; i++) {
 			int[][] highscore = new int[unit][2];
-		 
-			
 		}
 	}
 
@@ -92,30 +89,32 @@ System.out.println("invalid response please enter y or n ");
 		int j=0;
 		for(int i = 0; i<= unit; i++) {
 		
-		String entering;
-		score = score + 10/distance;
+			String entering;
+			score = score + 10/distance;
 			System.out.println("is this unit  a specalist y/n");
-				entering = ob.next();
-				
-				if(entering.equals("y")) {
+			entering = ob.next();
+			
+			if(entering.equals("y")) {
 				score=score+ 15;
-				}
+			}
+			
 			System.out.println("is this unit  a injured  y/n");
-				entering = ob.next();
-				if(entering.equals("y"))	{
-					score=score+ 15;
-				}
-				if(highestscore < score) { 
+			entering = ob.next();
+			if(entering.equals("y")) {
+				score=score+ 15;
+			}
+			if(highestscore < score) { 
 				highestscore = score; 
 				pointer = i;
-				}
-				System.out.println("unit" + i + "has a score of" + score);
+			}
+			System.out.println("unit" + i + "has a score of" + score);
+		}
+
+		if(j==unit) {
+
+		} else {
+			score(redblobs);
+		}
 	}
-	if(j==unit)
-	 {}
-	 else {
-Main.score();
-}	
-}
 }
 
